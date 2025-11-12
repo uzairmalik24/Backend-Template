@@ -136,3 +136,11 @@ This template ensures:
 **Author:** Uzair Malik
 **Stack:** Node.js, Express.js, MongoDB (Mongoose)
 **Status:** Backend template in development, ready for customization.
+
+
+# .env example
+
+MONGODB_URI=
+PORT=3000
+JWT_SECRET_KEY=my-secret_key/secured*node\test
+DB_NAME=node-test
