@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "f54e337b-13fd-4a8b-8ffd-1d9b0ca275ec",
+		"name": "Backend Template",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "43770193"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Uzair\",\r\n    \"email\": \"uzair@gmail.com\",\r\n    \"password\": 12345678\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_URL}}user"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"super admin\",\r\n    \"email\": \"admin@fraud.com\",\r\n    \"password\": 12345678\r\n}"
+						},
+						"url": "{{base_URL}}user"
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"super admin\",\r\n    \"email\": \"admin@fraud.com\",\r\n    \"password\": 12345678\r\n}"
+						},
+						"url": "{{base_URL}}user/6914f89befdc2ff4555313f7"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6914f89befdc2ff4555313f7\",\r\n    \"name\": \"Uzair\",\r\n    \"email\": \"uzair@gmail.com\",\r\n    \"password\": 12345678\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_URL}}user"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6914f89befdc2ff4555313f7\",\r\n    \"name\": \"Uzair\",\r\n    \"email\": \"uzair@gmail.com\",\r\n    \"password\": 12345678\r\n}"
+						},
+						"url": "{{base_URL}}user/69150c3cce6a829d6e99c6d1"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_URL",
+			"value": "localhost:3000/",
+			"type": "default"
+		}
+	]
+}
