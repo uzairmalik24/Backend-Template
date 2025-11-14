@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { comparePassword, generateApiResponse, generateToken, hashPassword, verifyToken } from "../services/utils.js";
+import { comparePassword, generateApiResponse, generateToken, hashPassword, verifyToken } from "../services/utils.service.js";
 
 const userSchema = new mongoose.Schema({
     name: { type: String, required: true },

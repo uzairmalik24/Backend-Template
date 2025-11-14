@@ -1,4 +1,4 @@
-import { generateApiResponse } from "./utils.js"
+import { generateApiResponse } from "./utils.service.js"
 
 export const asyncHandler = (fn) => async (req, res, next) => {
     try {
