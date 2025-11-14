@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { generateApiResponse, verifyEmail } from "../services/utils.js";
+import { generateApiResponse, verifyEmail } from "../services/utils.service.js";
 
 
 export const requiredValidators = (requiredFields = []) => {
@@ -28,29 +28,3 @@ export const requiredValidators = (requiredFields = []) => {
         }
     }
 }
-
-
-export const paramIdChecker = (model = null, paramName = 'id') => {
-    return async (req, res, next) => {
-        const id = req.params[paramName];
-
-        if (!mongoose.Types.ObjectId.isValid(id)) {
-            return generateApiResponse(res, 400, false, `${id} is invalid`);
-        }
-
-        if (model) {
-            try {
-                const entity = await model.findById(id);
-                if (!entity) {
-                    return generateApiResponse(res, 404, false, `${model.modelName} not found`);
-                }
-                req.entity = entity;
-            } catch (error) {
-                console.log(error);
-                return generateApiResponse(res, 500, false, error.message);
-            }
-        }
-
-        next();
-    };
-};
