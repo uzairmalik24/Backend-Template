@@ -1,11 +1,12 @@
 {
-  "name": "first-node-with-testing",
+  "name": "backend-template",
   "version": "1.0.0",
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "test": "vitest",
+    "start": "node src/index.js",
+    "coverage": "vitest run --coverage"
   },
   "keywords": [],
   "author": "",
@@ -19,5 +20,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.19.3",
     "nodemon": "^3.1.11"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.8"
   }
 }
