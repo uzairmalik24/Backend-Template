@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
-import { asyncHandler } from "../services/asyncHandler.js";
-import { generateApiResponse } from "../services/utils.js";
+import { asyncHandler } from "../services/asyncHandler.service.js";
+import { generateApiResponse } from "../services/utils.service.js";
 import { User } from "../startup/models.js";
+import { validateAndGetOne } from "../services/mongoFunc.service.js";
 
 
 export const userController = {
@@ -14,7 +15,7 @@ export const userController = {
 
 
     getUserById: asyncHandler(async (req, res) => {
-        const user = req.entity;
+        const user = await validateAndGetOne(User, req.params.id, [], '-password')
         return generateApiResponse(res, 200, true, 'User fetched successfully!', { user })
     }),
 
@@ -69,7 +70,7 @@ export const userController = {
 
 
     deleteUser: asyncHandler(async (req, res) => {
-        const user = req.entity
+        const user = await validateAndGetOne(User, req.params.id)
         await user.deleteOne()
         return generateApiResponse(res, 200, true, 'User deleted successfully!')
     })
